@@ -1,0 +1,66 @@
+body{
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 0px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.active{
+  text-decoration: underline;
+}
+ul{
+  margin-top: 0px;
+  padding: 20px;
+}
+li{
+  display: inline;
+  margin: 20px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+nav{
+  background-color: rgb(20, 20, 20);
+}
+.cardNoticia{
+  border: 2px solid white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+}
+.tituloNoticia{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 20px;
+  padding: 5px;
+  height: 40px;
+  color:rgb(230, 225, 218);
+  background-color:rgb(57, 63, 75);
+  border-radius: 10px;
+}
+.textoNoticia{
+  color:bisque;
+  text-align: justify;
+}
+.imgCardNoticia{
+  float: left;
+  margin-left: 40px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.descricaoNoticia{
+  color:bisque;
+  text-align: justify;
+  margin: 28px 40px 20px 40px;
+}
+input, textarea{
+  background-color:rgb(40, 44, 51);
+  color: white;
+}
