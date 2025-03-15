@@ -1,6 +1,6 @@
 
 export type Noticia = {
-  id: number,
+  _id: number,
   descricao: string,
   imagem: string,
   titulo: string,

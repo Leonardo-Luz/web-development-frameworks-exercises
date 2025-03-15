@@ -1,6 +1,8 @@
-import noticias from '@/noticias.json'
+import { GetAll } from "../services/noticiaService"
 
 export const GET = async () => {
+	const noticias = await GetAll()
+
 	return new Response(JSON.stringify(noticias), { status: 200 })
 }
 export const POST = async (req: Request) => {
@@ -8,10 +10,9 @@ export const POST = async (req: Request) => {
 
 	const newNoticia = {
 		...body,
-		id: noticias.length + 1
 	}
 
-	noticias.push(newNoticia)
+	// Post(newNoticia)
 
 	return new Response(JSON.stringify({ message: 'Noticia criada com sucesso!' }), { status: 200 })
 }

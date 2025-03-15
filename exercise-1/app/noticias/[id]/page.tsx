@@ -3,13 +3,16 @@
 import { Noticia as NoticiaT } from "@/types"
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react"
+import { use, useEffect, useState } from "react"
 
-const Noticia = ({ params }: { params: { id: string } }) => {
+const Noticia = ({ params }: { params: Promise<{ id: string }> }) => {
   const [noticia, setNoticia] = useState<NoticiaT>();
 
+  const { id } = use(params)
+
   const getNoticia = async () => {
-    const response = await fetch(`http://localhost:3000/api/v1/noticias/${params.id}`, {
+
+    const response = await fetch(`/api/v1/noticias/${id}`, {
       method: 'GET'
     })
 

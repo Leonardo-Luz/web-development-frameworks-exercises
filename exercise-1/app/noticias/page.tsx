@@ -4,13 +4,11 @@ import { useEffect, useState } from "react"
 import CardNoticia from "@/components/cardNoticia/page";
 import { Noticia } from "@/types";
 
-// import noticias from '@/noticias.json'
-
 const Noticias = () => {
   const [noticias, setNoticias] = useState<Noticia[]>();
 
   const getNoticias = async () => {
-    const response = await fetch('http://localhost:3000/api/v1/noticias', {
+    const response = await fetch('/api/v1/noticias', {
       method: 'GET'
     })
 
@@ -30,7 +28,7 @@ const Noticias = () => {
       <div className="flex-container">
         {
           noticias ?
-            noticias.map(noticia => <CardNoticia key={noticia.id} noticia={noticia} />) :
+            noticias.map(noticia => <CardNoticia key={noticia._id} noticia={noticia} />) :
             <p>Nenhuma noticia encontrada!</p>
         }
       </div>

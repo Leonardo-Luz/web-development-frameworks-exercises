@@ -8,7 +8,7 @@ type cardNoticiaProps = {
 
 const CardNoticia = ({ noticia }: cardNoticiaProps) => {
 	return (
-		<Link href={`/noticias/${noticia.id}`}>
+		<Link href={`/noticias/${noticia._id}`}>
 			<div className="cardNoticia">
 				<Image
 					src={`/${noticia.imagem}`}
