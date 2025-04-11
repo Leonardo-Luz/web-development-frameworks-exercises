@@ -13,6 +13,12 @@ export default async function Seeds() {
             console.log(err)
         })
 
+    const find = await NoticiaModel.findById(noticias[0].id);
+
+    if(find != null){
+        redirect('/')
+    }
+
     const news = noticias.map(noticia => {
         let { id, ...novaNoticia } = noticia
         return novaNoticia

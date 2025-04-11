@@ -1,4 +1,4 @@
-import { GetAll } from "../services/noticiaService"
+import { GetAll, Post } from "../services/noticiaService"
 
 export const GET = async () => {
 	const noticias = await GetAll()
@@ -12,7 +12,10 @@ export const POST = async (req: Request) => {
 		...body,
 	}
 
-	// Post(newNoticia)
-
-	return new Response(JSON.stringify({ message: 'Noticia criada com sucesso!' }), { status: 200 })
+	Post(newNoticia).then(() => {
+		return new Response(JSON.stringify({ message: 'Noticia criada com sucesso!' }), { status: 200 })
+	}).catch(e => {
+		console.log(e);
+		return new Response(JSON.stringify({ message: 'Erro ao criar noticia!' }), { status: 500 })
+	})
 }
