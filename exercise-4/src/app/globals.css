@@ -1,0 +1,146 @@
+body{
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 0px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.active{
+  text-decoration: underline;
+}
+ul{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 20px;
+}
+li{
+  display: inline;
+  margin: 20px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+nav{
+  background-color: rgb(20, 20, 20);
+}
+.cardNoticia{
+  border: 2px solid white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  height: 350px; /* atualizar print */
+}
+.tituloNoticia{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 20px;
+  padding: 5px;
+  height: 40px;
+  color:rgb(230, 225, 218);
+  background-color:rgb(57, 63, 75);
+  border-radius: 10px;
+}
+.textoNoticia{
+  color:bisque;
+  text-align: justify;
+}
+.imgCardNoticia{
+  float: left;
+  margin-left: 40px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.descricaoNoticia{
+  color:bisque;
+  text-align: justify;
+  margin: 28px 40px 20px 40px;
+}
+input, textarea{
+  background-color:rgb(40, 44, 51);
+  color: white;
+}
+.buttonLink{
+  border: 1px solid rgb(56, 64, 77);
+  border-radius: 10px;
+  padding: 5px;
+  width: 150px;
+  margin: 10 auto 10 auto;
+}
+.buttonLink:hover{
+  background-color: rgb(56, 64, 77);
+}
+.buttonLink:active{
+  background-color: rgb(97, 107, 123);
+}
+.lista li{
+  display: block;
+  margin: 0px;
+}
+.cardAdm{
+  width: 500px;
+  min-height: 120px; /* atualizar print */
+  margin: 10 auto 30 auto;
+}
+.tituloAdm{
+  text-align: left;
+  margin-bottom: 3px;
+  color: rgb(66, 104, 164);
+}
+.descricaoAdm{
+  text-align: justify;
+  margin-top: 0;
+}
+.verMaisAdm{
+  color: rgb(112, 123, 138);
+  border: 1px solid rgb(56, 64, 77);
+  border-radius: 10px;
+  padding: 0px 5px;
+  font-size: 0.7em;
+  cursor: pointer;
+  margin-left: 5px;
+} 
+.contatoAdm{
+  text-align: left;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  color: rgb(116, 140, 177);
+}
+.apagarAdm{
+  color: rgb(186, 17, 17);
+  border: 1px solid rgb(164, 11, 11);
+  border-radius: 10px;
+  padding: 0px 5px;
+  font-size: 0.7em;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.opaco{
+  opacity: 0.4;
+}
+.cancelar{
+  color: rgb(41, 121, 139);
+  border: 1px solid rgb(41, 121, 139);
+}
+.imgCardAdmNoticia{ 
+  float: left;
+  margin-right: 10px;
+}
+.editarAdm{
+  color: rgb(173, 150, 16);
+  border: 1px solid rgb(173, 150, 16);
+  border-radius: 10px;
+  padding: 0px 5px;
+  font-size: 0.7em;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.voltar{
+  margin-top: 40px;
+}
