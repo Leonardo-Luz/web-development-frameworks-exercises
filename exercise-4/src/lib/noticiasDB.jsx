@@ -5,6 +5,8 @@ import Noticia from '@/models/noticia'
 import { redirect } from 'next/navigation'
 import xss from 'xss'
 import fs from 'node:fs'
+import { error } from 'node:console'
+import { revalidatePath } from 'next/cache'
 
 async function connDB() {
     await connectDB()
@@ -28,6 +30,10 @@ export async function getNoticia(id) {
 }
 
 export async function apagaNoticia(id, imagem) {
+    await connDB()
+    apagaImagem(imagem)
+    await Noticia.findByIdAndDelete(id)
+    revalidatePath("/adm/noticias")
 }
 
 export async function gravaNoticia(noticia) {
@@ -58,6 +64,34 @@ async function gravaImagem(imagem, nomeImagem) {
     })
 }
 
-export async function editaNoticia(noticia) {
+export async function apagaImagem(imagem) {
+    fs.unlink(`public/${imagem}`, (error) => {
+        console.log("Erro ao apagar a imagem")
+        console.log(error)
+    })
+}
 
+export async function editaNoticia(noticia) {
+    await connDB()
+
+    const id = noticia.id
+    const titulo = xss(noticia.titulo)
+    const descricao = xss(noticia.descricao)
+    const imagem = noticia.imagem
+    const imagemAntiga = noticia.imagemAntiga
+
+    let noticiaEditada = {}
+
+    if (imagem.name && (imagem.name != 'undefined')) {
+        const nomeImagem = geraNomeImagem(titulo, imagem.name)
+        noticiaEditada = { titulo, descricao, imagem: nomeImagem }
+        apagaImagem(imagemAntiga)
+        gravaImagem(imagem, nomeImagem)
+    } else {
+        noticiaEditada = { titulo, descricao }
+    }
+
+
+    await Noticia.findByIdAndUpdate(id, noticiaEditada, { runValidators: true })
+    redirect(`/adm/noticias`)
 }
